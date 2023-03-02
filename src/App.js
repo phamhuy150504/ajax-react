@@ -1,24 +1,17 @@
-import logo from './logo.svg';
-import './App.css';
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+import TodilistClass from "./components/Ajax-react/TodilistClass";
+import TodolisFun from "./components/Ajax-react/TodolisFun";
+import Header from "./components/Header";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<Header />}></Route>
+        <Route path="ajax-class" element={<TodilistClass />} />
+        <Route path="ajax-fun" element={<TodolisFun />} />
+      </Routes>
+    </BrowserRouter>
   );
 }
 
